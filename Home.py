@@ -25,13 +25,17 @@ dt=pd.read_excel("./data/NewData.xlsx")
 
 st.write(dt.head(10))
 
-dt1 = dt['L-CORE'].sum()
-dt2 = dt['L-SURF'].sum()
-dt3 = dt['L-O2'].sum()
-dt4 = dt['L-BP'].sum()
+dt1 = dt['Length'].sum()
+dt2 = dt['Diameter'].sum()
+dt3 = dt['Height'].sum()
+dt4 = dt['Whole weight'].sum()
+dt5 = dt['Shucked weight'].sum()
+dt6 = dt['Viscera weight'].sum()
+dt7 = dt['Shell weight'].sum()
+dt8 = dt['Rings'].sum()
 
-dx = [dt1, dt2, dt3, dt4]
-dx2 = pd.DataFrame(dx, index=["d1", "d2", "d3", "d4"])
+dx = [dt1, dt2, dt3, dt4 ,dt5 ,dt6 ,dt7 ,dt8]
+dx2 = pd.DataFrame(dx, index=["d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8"])
 
 if st.button("แสดงการจินตทัศน์ข้อมูล"):
    st.write(dt.head(10))
@@ -49,10 +53,14 @@ html_8 = """
 st.markdown(html_8, unsafe_allow_html=True)
 st.markdown("")
 
-pt_len=st.slider("กรุณาเลือกข้อมูล L-CORE")
-pt_wd=st.slider("กรุณาเลือกข้อมูล L-SURF")
-sp_len=st.number_input("กรุณาเลือกข้อมูล L-O2")
-sp_wd=st.number_input("กรุณาเลือกข้อมูล L-BP")
+pt_len=st.slider("กรุณาเลือกข้อมูล Length")
+pt_wd=st.slider("กรุณาเลือกข้อมูล Diameter")
+pt_len=st.slider("กรุณาเลือกข้อมูล Height")
+pt_wd=st.slider("กรุณาเลือกข้อมูล Whole weight")
+sp_len=st.number_input("กรุณาเลือกข้อมูล Shucked weight")
+sp_wd=st.number_input("กรุณาเลือกข้อมูล Viscera weight")
+sp_len=st.number_input("กรุณาเลือกข้อมูล Shell weight")
+sp_wd=st.number_input("กรุณาเลือกข้อมูล Rings")
 
 if st.button("ทำนายผล"):
    st.markdown("ใส่โมเดล")
