@@ -20,8 +20,8 @@ html_8 = """
 
 st.markdown(html_8, unsafe_allow_html=True)
 st.markdown("")
- 
-dt=pd.read_excel("./data/abalone.xlsx")
+
+dt=pd.read_excel("./data/NewData.xlsx")
 
 st.write(dt.head(10))
 
@@ -38,7 +38,7 @@ dx = [dt1, dt2, dt3, dt4 ,dt5 ,dt6 ,dt7 ,dt8]
 dx2 = pd.DataFrame(dx, index=["d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8"])
 
 if st.button("แสดงการจินตทัศน์ข้อมูล"):
-   st.write(dt.head(10))
+   st.write(dt.head(10)) 
    st.bar_chart(dx2)
    st.button("ไม่แสดงข้อมูล")
 else:
@@ -59,8 +59,8 @@ pt_len=st.slider("กรุณาเลือกข้อมูล Height")
 pt_wd=st.slider("กรุณาเลือกข้อมูล Whole weight")
 sp_len=st.number_input("กรุณาเลือกข้อมูล Shucked weight")
 sp_wd=st.number_input("กรุณาเลือกข้อมูล Viscera weight")
-sp_len=st.number_input("กรุณาเลือกข้อมูล Shell weight")
-sp_wd=st.number_input("กรุณาเลือกข้อมูล Rings")
+sp_len=st.number_input("กรุณาเลือกข้อมูล Shucked weight")
+sp_wd=st.number_input("กรุณาเลือกข้อมูล Viscera weight")
 
 if st.button("ทำนายผล"):
    st.markdown("ใส่โมเดล")
